@@ -27,7 +27,7 @@ router.get('/anchors', async (req, res) => {
     const groupName = req.query.groupName;
 
     try {
-        const anchorIds = await Group.find({groupName: groupName})
+        const anchorIds = await Group.findOne({groupName: groupName})
             .select('anchorIds').lean().exec();
 
         console.log(anchorIds);
