@@ -56,6 +56,8 @@ router.get('/latest-anchor', async (req, res) => {
 
 // ADD ANCHOR
 router.post('/anchors', verifyPassword, async (req, res) => {
+    console.log('POST /anchors received');
+    console.log(req.body);
     const groupName = req.body.groupName;
     const anchorId = req.body.anchorId;
     try {
